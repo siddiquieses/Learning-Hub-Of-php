@@ -1,3 +1,14 @@
+<?php
+session_start();
+ include '../connection.php';
+ if(!isset($_SESSION['id']))
+    {
+        header("Location:../login.php");
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +17,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Welcome</h1>
-    <a href="logout.php">Logout</a>
+    <h1>Hello</h1>
 </body>
 </html>

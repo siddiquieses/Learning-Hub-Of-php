@@ -10,9 +10,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   if($password!==$cpassword){
    $passworderror= "password and conform password  does not match";
   }
-  else{
+
+ 
     $hashedpassword=password_hash($password,PASSWORD_DEFAULT);
-  }
+
 
    $check=mysqli_query($connection,"SELECT id FROM register  WHERE email='$email'");
    if(mysqli_num_rows($check)>0)

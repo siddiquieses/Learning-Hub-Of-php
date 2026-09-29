@@ -17,11 +17,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $_SESSION['userid']=$user['id'];
     $_SESSION['name']=$user['username'];
     $_SESSION['email']=$user['email'];
- 
+    $_SESSION['Role']=$user['Role'] ;
     header("Location:home.php");
 
   }
-     
+if($user['Role']==='Admin')
+    {
+        header("Location:Admin/index.php");
+    }     
+    else{
+        header("Location:website/index.php");
+    }
 
 
   }
@@ -33,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <title>Document</title>
 </head>
