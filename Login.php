@@ -18,17 +18,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $_SESSION['name']=$user['username'];
     $_SESSION['email']=$user['email'];
     $_SESSION['Role']=$user['Role'] ;
-    header("Location:home.php");
-
-  }
-if($user['Role']==='Admin')
+    if($user['Role']==='Admin')
     {
         header("Location:Admin/index.php");
-    }     
-    else{
-        header("Location:website/index.php");
     }
-
+    else{
+        header("Location:Website/index.php");
+    }
+    exit();
+  }
 
   }
 }
